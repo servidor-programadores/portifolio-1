@@ -4,6 +4,9 @@ import Card from "./Card";
 import { FaGithub } from "react-icons/fa";
 import GitHubCalendar from "react-github-calendar";
 
+const username = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
+
+
 export default function GithubCard() {
   return (
     <Card
@@ -11,7 +14,7 @@ export default function GithubCard() {
       className="col-span-1 p-6 flex bg-[#1a1a1ab3] card-glass transition duration-300 items-center"
     >
       <a
-        href="https://github.com/nahtanpng"
+        href={`https://github.com/${username}`}
         target="_blank"
         rel="noopener noreferrer"
         className="flex flex-col gap-2 w-full cursor-pointer"
@@ -23,7 +26,7 @@ export default function GithubCard() {
 
         <div className="flex-1 flex items-center justify-center">
           <GitHubCalendar
-            username="nahtanpng"
+            username={username}
             blockSize={15}
             blockMargin={3}
             fontSize={11}
